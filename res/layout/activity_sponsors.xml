@@ -1,0 +1,156 @@
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout 
+         
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        >
+        <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Associate Sponsors"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:gravity="center"
+        />
+        <ImageView 
+             android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ssp1"
+            android:layout_margin="10dp"/>
+        <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Co Sponsor"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:gravity="center"
+        />
+        <ImageView 
+             android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/sp2"
+            android:layout_margin="10dp"/>
+        <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Education Partner"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:gravity="center"
+        />
+        <ImageView 
+           android:layout_gravity="center"
+            android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+            android:background="@drawable/sp3"
+            android:layout_margin="10dp"/>
+        <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Outdoor Gear Partner"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:gravity="center"
+        />
+        <ImageView 
+        android:layout_gravity="center"
+            android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+            android:background="@drawable/sp4"
+            android:layout_margin="10dp"/>
+        <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="IDP"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:gravity="center"
+        />
+        <ImageView 
+         android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/sp5"
+            android:layout_margin="10dp"/>
+       <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Jotting Partner"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:gravity="center"
+        />
+        <ImageView 
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/sp6"
+            android:layout_margin="10dp"
+            android:gravity="center"/>
+        <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Presenting Partner"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:gravity="center"
+        />
+        <ImageView 
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/sp7"
+            android:layout_margin="10dp"/>
+        <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gift Partner"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:gravity="center"
+        />
+        <ImageView 
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/sp8"
+            android:layout_margin="10dp"/>
+        <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Style Partner"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:gravity="center"
+        />
+        <ImageView 
+             android:layout_gravity="center"
+            android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+            android:background="@drawable/sp9"
+            android:layout_margin="10dp"/>
+        <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Green Partner"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:gravity="center"
+        />
+        <ImageView 
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/sp10"
+            android:layout_margin="10dp"/>
+    </LinearLayout>   
+</ScrollView>
+    
+

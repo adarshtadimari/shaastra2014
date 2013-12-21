@@ -1,0 +1,14 @@
+  <TextView
+            android:id="@+id/cordname"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:typeface="sans"
+            android:textSize="20sp"
+            android:textColor="#FFF"
+            android:background="@drawable/diagonal_blue"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:paddingLeft="4dp"
+            >
+        </TextView>

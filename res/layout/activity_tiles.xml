@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@drawable/backblue"
+    android:animateLayoutChanges="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+        
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+            <ImageButton
+                android:id="@+id/tilem1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/phone_green"
+                android:alpha="0.75"
+                android:layout_marginTop="10dp"
+               	android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
+                android:clickable="true"
+         		android:soundEffectsEnabled="true"
+         		      
+                />
+         </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+            <LinearLayout
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1">
+                <ImageButton
+                    android:id="@+id/tiles1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dip"
+                    android:background="@drawable/facebook"
+                    android:alpha="0.75"
+                    android:layout_weight="1"
+                    android:layout_marginTop="10dp"
+                   	android:layout_marginBottom="2.5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="2.5dp" />
+                <ImageButton
+                    android:id="@+id/tiles2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dip"
+                    android:background="@drawable/google_plus"
+                    android:alpha="0.75"
+                    android:layout_weight="1"
+                    android:layout_marginTop="2.5dp"
+                   	android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="2.5dp" />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1">
+                <ImageButton
+                    android:id="@+id/tiles3"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dip"
+                    android:background="@drawable/youtube"
+                    android:alpha="0.75"
+                    android:layout_weight="1"
+                    android:layout_marginTop="10dp"
+                   	android:layout_marginBottom="2.5dp"
+                    android:layout_marginLeft="2.5dp"
+                    android:layout_marginRight="10dp" />
+                <ImageButton
+                    android:id="@+id/tiles4"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dip"
+                   android:background="@drawable/twitter"
+                    android:alpha="0.75"
+                    
+                    android:layout_weight="1"
+                    android:layout_marginTop="2.5dp"
+                   	android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="2.5dp"
+                    android:layout_marginRight="10dp" />
+
+            </LinearLayout>
+        </LinearLayout>
+        
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:orientation="horizontal"
+        android:layout_weight="1" >
+        <ImageButton
+            android:id="@+id/tileb1"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:background="@drawable/car"
+            android:alpha="0.75"
+            android:layout_weight="1"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+           	android:layout_marginBottom="5dp" />
+        <ImageButton
+            android:id="@+id/tileb2"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:background="@drawable/shows"
+            android:alpha="0.75"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+           	android:layout_marginBottom="5dp" />
+       
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:orientation="horizontal"
+        android:layout_weight="1" >
+         <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+ 		<ImageButton
+                android:id="@+id/tilel1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/lectures"
+                android:alpha="0.75"
+                android:layout_marginTop="5dp"
+               	android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
+                android:clickable="true"
+         		android:soundEffectsEnabled="true"
+         		      
+                />
+             
+         </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+             <ImageButton
+                android:id="@+id/tilel2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/sponsors"
+                android:alpha="0.75"
+                android:layout_marginTop="5dp"
+               	android:layout_marginBottom="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:clickable="true"
+         		android:soundEffectsEnabled="true"
+         		      
+                />
+        
+                    </LinearLayout>
+        
+        
+    </LinearLayout>
+</LinearLayout>

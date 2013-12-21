@@ -1,0 +1,123 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical" >
+
+    <ViewFlipper
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/lectureflipper">
+                <ImageView 
+           	android:id="@+id/lec1"
+            android:background="@drawable/l1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            />
+        
+        <ImageView
+           	android:id="@+id/lec3"
+            android:background="@drawable/l2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            />
+        <ImageView
+           	android:id="@+id/lec4"
+            android:background="@drawable/l3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            />            
+   <ImageView
+           	android:id="@+id/lec5"
+            android:background="@drawable/l4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            />            
+   <ImageView
+           	android:id="@+id/lec6"
+            android:background="@drawable/l5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            />            
+   <ImageView
+           
+            android:background="@drawable/l6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            />
+   <ImageView
+           
+            android:background="@drawable/l7"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            />            
+            <ImageView
+           
+            android:background="@drawable/l8"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            />
+             <ImageView
+           
+            android:background="@drawable/l9"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            />
+               <ImageView
+           
+            android:background="@drawable/l10"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            />
+                 <ImageView
+           
+            android:background="@drawable/l11"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            />
+                   <ImageView
+           
+            android:background="@drawable/l12"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            />
+                           <ImageView
+           
+            android:background="@drawable/l13"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            />
+                                   <ImageView
+           
+            android:background="@drawable/l14"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            />
+                                           <ImageView
+           
+            android:background="@drawable/l15"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            />
+              
+           
+             
+      
+    </ViewFlipper>
+</LinearLayout>

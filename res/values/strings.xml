@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Shaastra</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_tiles">TilesActivity</string>
+    <string name="title_activity_activity1">Activity1</string>
+    <string name="title_activity_event">EventActivity</string>
+    <string name="title_activity_event_list">EventList</string>
+    <string name="title_activity_coordinators_list">CoordinatorsList</string>
+    <string name="title_activity_shows_flip">ShowsFlip</string>
+    <string name="title_activity_sponsors">Sponsors</string>
+    <string name="title_activity_my_location">MyLocation</string>
+    <string name="title_activity_lectures_flip">LecturesFlip</string>
+    <string name="title_activity_event_try">EventTry</string>
+    <string name="title_activity_lecture">LectureActivity</string>
+    <string name="title_activity_credits">CreditsActivity</string>
+
+</resources>

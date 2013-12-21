@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    
+     >
+
+    <LinearLayout
+        android:background="@drawable/backblue"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+       
+        android:layout_margin="4dp"
+         >
+        <TextView 
+            android:textColor="#FFFFFF"
+            android:textSize="20dp"
+            android:text="Want to make something that flies? Think you’re smart enough to automate it?
+
+We present AEROBOTICS, a unique blend of two very exciting fields of aero modelling and robotics, thereby “Taking Robotics to the Vertical Dimension”.
+
+All you will need is a flying machine tuned up to perform a specific set of tasks in a controlled environment. Testing the team on a variety of skills, the event pushes your innovation and creativity to the limits.
+
+So grab the opportunity and play the hero!! Huddle up teams, form your own skunk works, fly down to Shaastra and may your passion, skill and talent escort you to that handsome cash prize!"
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:layout_margin="10dp"
+			
+			android:textStyle="italic"
+		/>
+    </LinearLayout>
+    
+
+</ScrollView>

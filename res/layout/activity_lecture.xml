@@ -1,0 +1,145 @@
+<!--
+  Copyright 2012 The Android Open Source Project
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  -->
+
+<LinearLayout 
+    android:orientation="vertical" 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    
+    >
+    
+	<ViewFlipper
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        
+        android:id="@+id/lectureflipper">
+                <ImageView 
+           	android:id="@+id/lec1"
+            android:background="@drawable/l1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            />
+        
+        <ImageView
+           	android:id="@+id/lec3"
+            android:background="@drawable/l2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            />
+        <ImageView
+           	android:id="@+id/lec4"
+            android:background="@drawable/l3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            />            
+   <ImageView
+           	android:id="@+id/lec5"
+            android:background="@drawable/l4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            />            
+   <ImageView
+           	android:id="@+id/lec6"
+            android:background="@drawable/l5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            />            
+   <ImageView
+           
+            android:background="@drawable/l6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            />
+   <ImageView
+           
+            android:background="@drawable/l7"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            />            
+            <ImageView
+           
+            android:background="@drawable/l8"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            />
+             <ImageView
+           
+            android:background="@drawable/l9"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            />
+               <ImageView
+           
+            android:background="@drawable/l10"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            />
+                 <ImageView
+           
+            android:background="@drawable/l11"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            />
+                   <ImageView
+           
+            android:background="@drawable/l12"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            />
+                           <ImageView
+           
+            android:background="@drawable/l13"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            />
+                                   <ImageView
+           
+            android:background="@drawable/l14"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            />
+                                           <ImageView
+           
+            android:background="@drawable/l15"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            />
+              
+           
+             
+      
+    </ViewFlipper>
+	
+
+
+    </LinearLayout>

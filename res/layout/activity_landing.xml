@@ -1,0 +1,35 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backblue"
+   
+    tools:context=".LandingActivity"
+    android:orientation="vertical" >
+
+    <ImageView
+        
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:gravity="center"
+        android:scaleX="0.6"
+        android:scaleY="0.6"
+        android:src="@drawable/landing_logo"
+        android:text="Landing Page"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
+
+    <ImageButton
+        android:id="@+id/landingbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:alpha="0.3"
+        android:scaleX="0.8"
+        android:scaleY="0.8"
+        
+        android:background="@drawable/arrow"
+        android:textColor="#FFFFFF" />
+
+        "</LinearLayout>
