@@ -21,6 +21,7 @@ package org.shaastra.helper;
 
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import org.shaastra.activities.R;
 
@@ -35,6 +36,7 @@ import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.Layout;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -51,16 +53,31 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 public class SuperAwesomeCardFragment2 extends Fragment {
-
+	
+	private final String[] TITLES = { "All","Events","Facilities","QMS","Student Relations","Spons & PR","Shows","Evolve","Finance","Webops","Design" };
 	private static final String ARG_POSITION = "position";
 	AlertDialog.Builder b1;
 
 	private int position;
-
-	public static SuperAwesomeCardFragment2 newInstance(int position) {
+	ArrayList<String> con=new ArrayList<String>();
+	ArrayList<String> pon=new ArrayList<String>();
+	ArrayList<String> eon=new ArrayList<String>();
+	String cString[][]= new String[11][200];
+	String pString[][]= new String[11][200];
+	
+	int len[]=new int[11];
+	int plen[]=new int[11];
+	
+	public static SuperAwesomeCardFragment2 newInstance(int position,ArrayList<String> cNames,ArrayList<String> cNumber,ArrayList<String> cEvents) {
 		SuperAwesomeCardFragment2 f = new SuperAwesomeCardFragment2();
+		
+		//Collections.copy(cNames, con);
 		Bundle b = new Bundle();
 		b.putInt(ARG_POSITION, position);
+		b.putStringArrayList("cname", cNames);
+		b.putStringArrayList("cphone", cNumber);
+		b.putStringArrayList("cevent", cEvents);
+		
 		f.setArguments(b);
 		return f;
 	}
@@ -68,10 +85,33 @@ public class SuperAwesomeCardFragment2 extends Fragment {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
-		position = getArguments().getInt(ARG_POSITION);
-				
 		
+		position = getArguments().getInt(ARG_POSITION);
+		ArrayList<String> c= getArguments().getStringArrayList("cname");
+		ArrayList<String> p= getArguments().getStringArrayList("cphone");
+		ArrayList<String> e= getArguments().getStringArrayList("cevent");
+		con.addAll(c);
+		pon.addAll(p);
+		eon.addAll(e);
+		for(int i=0;i<10;i++){
+			len[i]=0;
+			plen[i]=0;
+		}
+		
+		int flag=0;
+		for(int i=0;i<con.size();i++)
+		{
+			for(int j=0;j<TITLES.length;j++)
+			{
+				if(eon.get(i).equalsIgnoreCase(TITLES[j]))
+				{
+					cString[j][len[j]++]=con.get(i);
+					pString[j][plen[j]++]=pon.get(i);
+				}	
+					
+			}
+		}
+		Log.d("events",String.valueOf(flag));
 			
 	}
 
@@ -80,7 +120,7 @@ public class SuperAwesomeCardFragment2 extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
 		LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
-
+		
 		ListView lv;
 		EditText inputSearch;
 		FrameLayout fl = new FrameLayout(getActivity());
@@ -98,24 +138,27 @@ public class SuperAwesomeCardFragment2 extends Fragment {
 		v.setText("CARD " + (position + 1));
 
 		
-		if(position ==0)
-		{
-			
-		}
+		
 			View v1=inflater.inflate(R.layout.contacts_list, container,false);
 			lv= (ListView)v1.findViewById(R.id.list1);
 			inputSearch = (EditText)v1.findViewById(R.id.inputSearch);
 			
-			String[] values = new String[] { "Adarsh Tadimari", "iPhone", "WindowsMobile",
-                    "Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
-               "Linux", "OS/2" };
-		
-			ArrayList<Coord> rowItems =new ArrayList<Coord>();
-			for (int i = 0; i < values.length; i++) {
-	            Coord item = new Coord(values[i],"9789091025");
-	            rowItems.add(item);
-	        }
 			
+			
+			ArrayList<Coord> rowItems =new ArrayList<Coord>();
+			if(position==0)
+				for (int i = 0; i < con.size(); i++) {
+					Coord item = new Coord(con.get(i),pon.get(i));
+						rowItems.add(item);
+				}
+			else
+			{
+				for(int i=0;i<len[position];i++){
+					Coord item=new Coord(cString[position][i],pString[position][i]);
+					rowItems.add(item);
+				}
+					
+			}
 			
 			/*final ArrayAdapter<String> files = new ArrayAdapter<String>(getActivity(), 
                     R.layout.custom_list_item 
@@ -129,7 +172,7 @@ public class SuperAwesomeCardFragment2 extends Fragment {
 			
 			lv.setAdapter(files);
 			lv.setOnItemClickListener(new OnItemClickListener() {
-			    public void onItemClick(AdapterView<?> parent, View view,
+			    public void onItemClick(AdapterView<?> parent, final View view,
 			        int position, long id) { 
 			    	
 			    	b1= new AlertDialog.Builder(getActivity());
@@ -139,7 +182,10 @@ public class SuperAwesomeCardFragment2 extends Fragment {
 						@Override
 						public void onClick(DialogInterface dialog, int which) {
 							// TODO Auto-generated method stub
-							String url = "tel:9789091025";
+							TextView t=(TextView)view.findViewById(R.id.cordphone);
+							
+							
+							String url = "tel:"+t.getText();
 					        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse(url));
 					        startActivity(intent);
 						}
@@ -149,7 +195,8 @@ public class SuperAwesomeCardFragment2 extends Fragment {
 						@Override
 						public void onClick(DialogInterface dialog, int which) {
 							// TODO Auto-generated method stub
-							String url = "sms:9789091025";
+							TextView t=(TextView)view.findViewById(R.id.cordphone);
+							String url = "sms:"+t.getText();
 					        Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.parse(url));
 					        startActivity(intent);
 						}

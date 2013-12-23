@@ -1,5 +1,7 @@
 package org.shaastra.activities;
 
+import java.util.ArrayList;
+
 import org.shaastra.helper.QuickContactFragment;
 import org.shaastra.helper.SuperAwesomeCardFragment2;
 
@@ -9,6 +11,7 @@ import com.astuetz.viewpager.extensions.PagerSlidingTabStrip;
 import android.os.Bundle;
 import android.os.Handler;
 import android.app.Activity;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -32,11 +35,13 @@ import android.os.Build;
 public class CoordinatorsList extends FragmentActivity {
 
 	private final Handler handler = new Handler();
-
+	
 	private PagerSlidingTabStrip tabs;
 	private ViewPager pager;
 	private MyPagerAdapter adapter;
-
+	ArrayList<String> cn=new ArrayList<String>();
+	ArrayList<String> pn=new ArrayList<String>();
+	ArrayList<String> en=new ArrayList<String>();
 	private Drawable oldBackground = null;
 	private int currentColor = 0xFF25495F;
 	
@@ -55,7 +60,13 @@ public class CoordinatorsList extends FragmentActivity {
     	this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		
 		setContentView(R.layout.activity_coordinators_list);
-
+		ArrayList<String>cNames= (ArrayList<String>)getIntent().getStringArrayListExtra("cname");
+		ArrayList<String>cNumber= (ArrayList<String>)getIntent().getStringArrayListExtra("cphone");
+		ArrayList<String>cEvents= (ArrayList<String>)getIntent().getStringArrayListExtra("cevent");
+		
+		cn.addAll(cNames);
+		pn.addAll(cNumber);
+		en.addAll(cEvents);
 		tabs = (PagerSlidingTabStrip) findViewById(R.id.tabs2);
 		pager = (ViewPager) findViewById(R.id.pager2);
 		adapter = new MyPagerAdapter(getSupportFragmentManager());
@@ -130,7 +141,7 @@ public class CoordinatorsList extends FragmentActivity {
 
 	public class MyPagerAdapter extends FragmentPagerAdapter {
 
-		private final String[] TITLES = { "Hospitality","Events", "Concept and Design", "Evolve", "Finance","QMS","Shows","Spons and PR","Student Relations","WebOps"};
+		private final String[] TITLES = { "All","Events","Facilities","QMS","Student Relations","Spons & PR","Shows","Evolve","Finance","Webops","Design" };
 		
 
 		public MyPagerAdapter(FragmentManager fm) {
@@ -149,7 +160,7 @@ public class CoordinatorsList extends FragmentActivity {
 
 		@Override
 		public Fragment getItem(int position) {
-			return SuperAwesomeCardFragment2.newInstance(position);
+			return SuperAwesomeCardFragment2.newInstance(position,cn,pn,en);
 		}
 
 	}

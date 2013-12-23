@@ -1,5 +1,7 @@
 package org.shaastra.activities;
 
+import java.util.ArrayList;
+
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -9,6 +11,7 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Intent;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View.OnClickListener;
 import android.view.HapticFeedbackConstants;
@@ -26,6 +29,7 @@ import android.view.animation.OvershootInterpolator;
 import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
 import android.view.*;
 public class TilesActivity extends Activity {
 	
@@ -42,7 +46,12 @@ public class TilesActivity extends Activity {
         //to remove notification bar
     	this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_tiles);
+        final ArrayList<String> cNames=(ArrayList<String>) getIntent().getStringArrayListExtra("cname");
+        final ArrayList<String> cNumber=(ArrayList<String>) getIntent().getStringArrayListExtra("cphone");
+        final ArrayList<String> cEvents=(ArrayList<String>) getIntent().getStringArrayListExtra("cevent");
         
+        //Log.d("val",cNames.get(3));
+       
         i = new Intent(this,EventList.class);
         i2= new Intent(this,CoordinatorsList.class);
         i3= new Intent(this,ShowsFlip.class);
@@ -166,6 +175,10 @@ public class TilesActivity extends Activity {
 					
 					Bundle scaleBundle=ActivityOptions.makeScaleUpAnimation(v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
 					v.animate().setInterpolator(new OvershootInterpolator()).scaleX(1f).scaleY(1f);
+					i2.putStringArrayListExtra("cname", cNames);
+					i2.putStringArrayListExtra("cphone", cNumber);
+					i2.putStringArrayListExtra("cevent", cEvents);
+					
 					startActivity(i2,scaleBundle);
 					
 				}
