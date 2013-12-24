@@ -1,5 +1,6 @@
 package org.shaastra.activities;
 
+import org.shaastra.helper.DBAdapter;
 import org.shaastra.helper.QuickContactFragment;
 import org.shaastra.helper.SuperAwesomeCardFragment;
 
@@ -26,6 +27,7 @@ import android.support.v4.app.NavUtils;
 import android.support.v4.view.ViewPager;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
+import android.database.Cursor;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 
@@ -54,6 +56,11 @@ public class EventActivity extends FragmentActivity {
 
 	private Drawable oldBackground = null;
 	private int currentColor = 0xFF25495F;
+	String eventName=new String();
+	String eventFormat=new String();
+	String eventIntroduction=new String();
+	String eventPrize=new String();
+	String eventVenue=new String();
 	
 	
 	
@@ -78,7 +85,27 @@ public class EventActivity extends FragmentActivity {
     	int eventIndex= extras.getInt("eventIndex");
     	
     	Log.d("event", try1[eventCatIndex][eventIndex]);
+    	DBAdapter db=new DBAdapter(this);
+    	db.open();
+    	Cursor c=db.getAllEvents();
     	
+    	  if (c.moveToFirst())
+          {
+              do {
+              		if(c.getString(1).equalsIgnoreCase(try1[eventCatIndex][eventIndex]))
+              		{
+              			eventName= c.getString(1);
+              			eventIntroduction= c.getString(2);
+              			eventFormat= c.getString(3);
+              			eventPrize= c.getString(4);
+              			eventVenue= c.getString(5);
+              			
+              		}
+            	  Log.d("eventevent",c.getString(3));
+                  //DisplayContact(c);
+              } while (c.moveToNext());
+          }
+    	db.close();
     	tabs = (PagerSlidingTabStrip) findViewById(R.id.tabs3);
 		pager = (ViewPager) findViewById(R.id.pager3);
 		adapter = new MyPagerAdapter(getSupportFragmentManager());
@@ -152,8 +179,7 @@ public class EventActivity extends FragmentActivity {
 
 	public class MyPagerAdapter extends FragmentPagerAdapter {
 
-		private final String[] TITLES = { "Introduction","Map","Event Format", "Problem Statement", "Resources", "Queries",
-				"Contact Us" };
+		private final String[] TITLES = { "Introduction","Map","Event Format", "Prize" };
 
 		public MyPagerAdapter(FragmentManager fm) {
 			super(fm);
@@ -171,7 +197,7 @@ public class EventActivity extends FragmentActivity {
 
 		@Override
 		public Fragment getItem(int position) {
-			return SuperAwesomeCardFragment.newInstance(position);
+			return SuperAwesomeCardFragment.newInstance(position,eventIntroduction,eventVenue,eventFormat,eventPrize);
 		}
 
 	}

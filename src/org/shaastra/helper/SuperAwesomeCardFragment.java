@@ -56,11 +56,22 @@ public class SuperAwesomeCardFragment extends Fragment {
 	Location l = null;
 
 	private int position;
-
-	public static SuperAwesomeCardFragment newInstance(int position) {
+	String eintroduction=new String();
+	String eformat=new String();
+	String evenue=new String();
+	String eprize=new String();
+	
+	
+	public static SuperAwesomeCardFragment newInstance(int position,String introduction,String venue,String format,String prize) {
 		SuperAwesomeCardFragment f = new SuperAwesomeCardFragment();
+		
 		Bundle b = new Bundle();
 		b.putInt(ARG_POSITION, position);
+		b.putString("int", introduction);
+		b.putString("format", format);
+		b.putString("venue", venue);
+		b.putString("prize", prize);		
+		
 		f.setArguments(b);
 		return f;
 	}
@@ -71,7 +82,10 @@ public class SuperAwesomeCardFragment extends Fragment {
 
 		position = getArguments().getInt(ARG_POSITION);
 				
-		
+		eintroduction=getArguments().getString("int");
+		eformat=getArguments().getString("format");
+		eprize=getArguments().getString("prize");
+		evenue=getArguments().getString("venue");
 			
 	}
 
@@ -100,13 +114,16 @@ public class SuperAwesomeCardFragment extends Fragment {
 		{
 			View v1=inflater.inflate(R.layout.event_info, container,false);
 			v1.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT));
+			TextView t1=(TextView)v1.findViewById(R.id.infotext);
+			t1.setText(eintroduction);
 			return v1;
 		}
 		else if(position==1)
 			
 		{	
 			
-			String Venue="SAC";
+			String Venue=new String();
+			Venue=evenue;
 			
 			final String SAC="12.989201,80.237712";
 			//String start=String.valueOf(l.getLatitude())+String.valueOf(l.getLongitude());
@@ -163,12 +180,20 @@ public class SuperAwesomeCardFragment extends Fragment {
 		}
 		else if(position==2)
 		{
-			v.setBackgroundColor(Color.BLUE);
+			View v1=inflater.inflate(R.layout.event_info, container,false);
+			v1.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT));
+			TextView t1=(TextView)v1.findViewById(R.id.infotext);
+			t1.setText(eformat);
+			return v1;
 			
 		}
 		else if(position==3)
 		{
-			v.setBackgroundColor(Color.DKGRAY);
+			View v1=inflater.inflate(R.layout.prize, container,false);
+			v1.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT));
+			TextView t1=(TextView)v1.findViewById(R.id.prizeText);
+			t1.setText(eprize);
+			return v1;
 			
 		}
 		else if(position==4)

@@ -159,10 +159,16 @@ public class LandingActivity extends Activity {
             } while (c.moveToNext());
         }
         
+       db.insertEvent("2","ROBOTICS" , "INTRasdasd", "FORMAT", "PRIZE", "VENUE");
+       
        
         
         
         db.close();
+        
+        
+        
+        
 		/*
 		db.open();
 		String coordInfo = HTTPHelper.getData("http://www.shaastra.org/mobops/coords/");

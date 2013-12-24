@@ -200,14 +200,14 @@ public final class R {
 	}
 	public static final class id {
 		public static final int ScrollView1 = 0x7f0a0027;
-		public static final int cardContent = 0x7f0a0030;
+		public static final int cardContent = 0x7f0a0031;
 		public static final int listView = 0x7f0a0025;
-		public static final int placeholder = 0x7f0a002e;
-		public static final int stackContainer = 0x7f0a0032;
-		public static final int stackTitle = 0x7f0a0031;
+		public static final int placeholder = 0x7f0a002f;
+		public static final int stackContainer = 0x7f0a0033;
+		public static final int stackTitle = 0x7f0a0032;
 		public static final int sticky = 0x7f0a0026;
 		public static final int tableLayout = 0x7f0a0028;
-		public static final int textView2 = 0x7f0a002f;
+		public static final int textView2 = 0x7f0a0030;
 		public static final int title = 0x7f0a0022;
 	}
 	public static final class layout {

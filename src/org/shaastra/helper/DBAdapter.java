@@ -7,17 +7,34 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-
+/*
+ * cv.put("time", time);
+			cv.put("_id", Integer.parseInt(eventID));
+			cv.put("eventCategoryID", val);
+			cv.put("eventName", eventName);
+			cv.put("introduction", introduction);
+			cv.put("format", format);
+			cv.put("prize", prizemoney);
+			cv.put("venueID", venueid);
+ */
 public class DBAdapter {
     static final String KEY_ROWID = "_id";
     static final String KEY_NAME = "name";
     static final String KEY_PHONE = "phone";
     static final String KEY_EVENT = "event";
+    static final String EVENT_ID="_id";
+    static final String EVENT_NAME= "eventname";
+    static final String EVENT_INTRODUCTION="introduction";
+    static final String EVENT_FORMAT="format";
+    static final String EVENT_PRIZE="prize";
+    static final String EVENT_VENUEID="venueid";
+   
     
     static final String TAG = "DBAdapter";
 
     static final String DATABASE_NAME = "MyDB";
     static final String DATABASE_TABLE = "contacts";
+    static final String DATABASE_TABLE_EVENT = "events";
     static final int DATABASE_VERSION = 2;
 
     static final String DATABASE_CREATE =
@@ -85,7 +102,17 @@ public class DBAdapter {
         initialValues.put(KEY_EVENT, event);
         return db.insert(DATABASE_TABLE, null, initialValues);
     }
-
+    public long insertEvent(String id,String eventName, String introduction, String format, String prize,String venueID)
+    {
+    	ContentValues initialValues = new ContentValues();
+    	 initialValues.put(EVENT_ID, id);
+         initialValues.put(EVENT_NAME, eventName);
+         initialValues.put(EVENT_INTRODUCTION, introduction);
+         initialValues.put(EVENT_FORMAT, format);
+         initialValues.put(EVENT_PRIZE, prize);
+         initialValues.put(EVENT_VENUEID, venueID);
+         return db.insert(DATABASE_TABLE_EVENT, null, initialValues);
+    }
     //---deletes a particular contact---
     public boolean deleteContact(long rowId) 
     {
@@ -98,6 +125,11 @@ public class DBAdapter {
         return db.query(DATABASE_TABLE, new String[] {KEY_ROWID, KEY_NAME,
                 KEY_PHONE,KEY_EVENT}, null, null, null, null, null);
     }
+    public Cursor getAllEvents()
+    {
+        return db.query(DATABASE_TABLE_EVENT, new String[] {EVENT_ID, EVENT_NAME,
+                EVENT_INTRODUCTION,EVENT_FORMAT,EVENT_PRIZE,EVENT_VENUEID}, null, null, null, null, null);
+    }
 
     //---retrieves a particular contact---
     public Cursor getContact(long rowId) throws SQLException 
@@ -105,6 +137,18 @@ public class DBAdapter {
         Cursor mCursor =
                 db.query(true, DATABASE_TABLE, new String[] {KEY_ROWID,
                 KEY_NAME, KEY_PHONE,KEY_EVENT}, KEY_ROWID + "=" + rowId, null,
+                null, null, null, null);
+        if (mCursor != null) {
+            mCursor.moveToFirst();
+        }
+        return mCursor;
+    }
+    public Cursor getEvent(long rowId) throws SQLException 
+    {
+        Cursor mCursor =
+                db.query(true, DATABASE_TABLE_EVENT, new String[] {EVENT_ID, EVENT_NAME,
+                        EVENT_INTRODUCTION,EVENT_FORMAT,EVENT_PRIZE,EVENT_VENUEID}, 
+                        EVENT_ID + "=" + rowId, null,
                 null, null, null, null);
         if (mCursor != null) {
             mCursor.moveToFirst();
