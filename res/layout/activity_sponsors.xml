@@ -26,7 +26,7 @@
         <TextView 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Co Sponsor"
+        android:text="Presenting Partner"
         android:textStyle="bold"
         android:textSize="20sp"
         android:gravity="center"
@@ -35,7 +35,177 @@
              android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/pres1"
+            android:layout_margin="10dp"/>
+        <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Research Partner"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:gravity="center"
+        />
+        <ImageView 
+             android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ge_logo"
+            android:layout_margin="10dp"/>
+        
+        <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Co Sponsors"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:gravity="center"
+        />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:background="@drawable/tcs" />
+
+        <ImageView 
+             android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/vmware"
+            android:layout_margin="10dp"/>
+        <ImageView 
+             android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/microsoft_small"
+            android:layout_margin="10dp"/>
+         <ImageView 
+             android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="@drawable/sp2"
+            android:layout_margin="10dp"/>
+        <ImageView 
+             android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/boeing_converted"
+            android:layout_margin="10dp"/>
+        
+        <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="IDP Partner"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:gravity="center"
+        />
+        <ImageView 
+           android:layout_gravity="center"
+            android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+            android:background="@drawable/sp5"
+            android:layout_margin="10dp"/>
+        <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Event Partners"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:gravity="center"
+        />
+        <ImageView 
+           android:layout_gravity="center"
+            android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+            android:background="@drawable/verisign"
+            android:layout_margin="10dp"/>
+         <ImageView 
+           android:layout_gravity="center"
+            android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+            android:background="@drawable/mu_sigma"
+            android:layout_margin="10dp"/>
+          <ImageView 
+           android:layout_gravity="center"
+            android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+            android:background="@drawable/dave"
+            android:layout_margin="10dp"/>
+           <ImageView 
+           android:layout_gravity="center"
+            android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+            android:background="@drawable/ifmr"
+            android:layout_margin="10dp"/>
+            <ImageView 
+           android:layout_gravity="center"
+            android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+            android:background="@drawable/airbus_converted"
+            android:layout_margin="10dp"/>
+             <ImageView 
+           android:layout_gravity="center"
+            android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+            android:background="@drawable/sagezza"
+            android:layout_margin="10dp"/>
+             <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Solutions Partner"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:gravity="center"
+        />
+        <ImageView 
+        android:layout_gravity="center"
+            android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+            android:background="@drawable/honeywell_converted"
+            android:layout_margin="10dp"/>
+        <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Eye Care Partner"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:gravity="center"
+        />
+        <ImageView 
+        android:layout_gravity="center"
+            android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+            android:background="@drawable/crizal"
+            android:layout_margin="10dp"/>
+        <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Green Partner"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:gravity="center"
+        />
+        <ImageView 
+        android:layout_gravity="center"
+            android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+            android:background="@drawable/gre1"
+            android:layout_margin="10dp"/>
+        <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Knowledge Partner"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:gravity="center"
+        />
+        <ImageView 
+        android:layout_gravity="center"
+            android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+            android:background="@drawable/knimbus"
             android:layout_margin="10dp"/>
         <TextView 
         android:layout_width="match_parent"
@@ -46,10 +216,56 @@
         android:gravity="center"
         />
         <ImageView 
-           android:layout_gravity="center"
+        android:layout_gravity="center"
             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-            android:background="@drawable/sp3"
+                android:layout_height="wrap_content"
+            android:background="@drawable/edu1"
+            android:layout_margin="10dp"/>
+         <ImageView 
+        android:layout_gravity="center"
+            android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+            android:background="@drawable/edu2"
+            android:layout_margin="10dp"/>
+          <ImageView 
+        android:layout_gravity="center"
+            android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+            android:background="@drawable/edusa"
+            android:layout_margin="10dp"/>
+           <ImageView 
+        android:layout_gravity="center"
+            android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+            android:background="@drawable/birmingham_city_converted"
+            android:layout_margin="10dp"/>
+           <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Jotting Partner"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:gravity="center"
+        />
+        <ImageView 
+        android:layout_gravity="center"
+            android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+            android:background="@drawable/sp6"
+            android:layout_margin="10dp"/>
+        <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Style Partner"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:gravity="center"
+        />
+        <ImageView 
+        android:layout_gravity="center"
+            android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+            android:background="@drawable/sty1"
             android:layout_margin="10dp"/>
         <TextView 
         android:layout_width="match_parent"
@@ -68,7 +284,21 @@
         <TextView 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="IDP"
+        android:text="Learning Partner"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:gravity="center"
+        />
+        <ImageView 
+        android:layout_gravity="center"
+            android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+            android:background="@drawable/pearson"
+            android:layout_margin="10dp"/>
+        <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Youth Opportunity Partner"
         android:textStyle="bold"
         android:textSize="20sp"
         android:gravity="center"
@@ -77,36 +307,49 @@
          android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/sp5"
+            android:background="@drawable/letmeknow"
             android:layout_margin="10dp"/>
-       <TextView 
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Jotting Partner"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:gravity="center"
-        />
-        <ImageView 
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/sp6"
-            android:layout_margin="10dp"
-            android:gravity="center"/>
         <TextView 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Presenting Partner"
+        android:text="Internship Partner"
         android:textStyle="bold"
         android:textSize="20sp"
         android:gravity="center"
         />
         <ImageView 
-            android:layout_gravity="center"
+        android:layout_gravity="center"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/sp7"
+                android:layout_height="wrap_content"
+            android:background="@drawable/internshala"
+            android:layout_margin="10dp"/>
+        <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Workshop Partner"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:gravity="center"
+        />
+        <ImageView 
+        android:layout_gravity="center"
+            android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+            android:background="@drawable/wor1"
+            android:layout_margin="10dp"/>
+        <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Workshop Partner"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:gravity="center"
+        />
+        <ImageView 
+        android:layout_gravity="center"
+            android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+            android:background="@drawable/wor1"
             android:layout_margin="10dp"/>
         <TextView 
         android:layout_width="match_parent"
@@ -117,40 +360,135 @@
         android:gravity="center"
         />
         <ImageView 
-            android:layout_gravity="center"
+        android:layout_gravity="center"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+                android:layout_height="wrap_content"
             android:background="@drawable/sp8"
             android:layout_margin="10dp"/>
-        <TextView 
+       <TextView 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Style Partner"
+        android:text="Media Partner"
         android:textStyle="bold"
         android:textSize="20sp"
         android:gravity="center"
-        />
+        />	
         <ImageView 
-             android:layout_gravity="center"
+        android:layout_gravity="center"
             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-            android:background="@drawable/sp9"
+                android:layout_height="wrap_content"
+            android:background="@drawable/efy"
+            android:layout_margin="10dp"/> 
+            <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Programming Partner"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:gravity="center"
+        />	
+        <ImageView 
+        android:layout_gravity="center"
+            android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+            android:background="@drawable/code"
+            android:layout_margin="10dp"/> 
+            <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Competition Partner"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:gravity="center"
+        />	
+        <ImageView 
+        android:layout_gravity="center"
+            android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+            android:background="@drawable/dare2compete"
+            android:layout_margin="10dp"/> 
+            <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Student Opportunity Partner"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:gravity="center"
+        />	
+        <ImageView 
+        android:layout_gravity="center"
+            android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+            android:background="@drawable/twenty19"
             android:layout_margin="10dp"/>
         <TextView 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Green Partner"
+        android:text="Official Blogging Partner"
         android:textStyle="bold"
         android:textSize="20sp"
         android:gravity="center"
-        />
+        />	
         <ImageView 
-            android:layout_gravity="center"
+        android:layout_gravity="center"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/sp10"
+                android:layout_height="wrap_content"
+            android:background="@drawable/campuswhizz"
+            android:layout_margin="10dp"/>  
+            <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sustainability Partner"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:gravity="center"
+        />	
+        <ImageView 
+        android:layout_gravity="center"
+            android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+            android:background="@drawable/ta"
+            android:layout_margin="10dp"/> 
+            <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Online Media Partners"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:gravity="center"
+        />	
+        <ImageView 
+        android:layout_gravity="center"
+            android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+            android:background="@drawable/techtree_logo"
             android:layout_margin="10dp"/>
-    </LinearLayout>   
+         <ImageView 
+        android:layout_gravity="center"
+            android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+            android:background="@drawable/festpav"
+            android:layout_margin="10dp"/>  
+             <ImageView 
+        android:layout_gravity="center"
+            android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+            android:background="@drawable/vertexplus"
+            android:layout_margin="10dp"/> 
+             <ImageView 
+        android:layout_gravity="center"
+            android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+            android:background="@drawable/knowafest"
+            android:layout_margin="10dp"/>
+              <ImageView 
+        android:layout_gravity="center"
+            android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+            android:background="@drawable/markmyfest_converted"
+            android:layout_margin="10dp"/> 
+              
+           </LinearLayout>   
 </ScrollView>
     
 
