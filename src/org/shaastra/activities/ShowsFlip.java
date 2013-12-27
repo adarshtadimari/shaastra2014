@@ -14,6 +14,12 @@ import android.annotation.TargetApi;
 import android.os.Build;
 
 public class ShowsFlip extends Activity {
+	@Override
+	public void finish() {
+		// TODO Auto-generated method stub
+		super.finish();
+		overridePendingTransition(R.anim.slid_in_left,R.anim.slid_out_right);
+	}
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

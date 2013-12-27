@@ -56,8 +56,10 @@ public class LandingActivity extends Activity {
 	ArrayList<String> cNames=new ArrayList<String>();
 	ArrayList<String> cNumber=new ArrayList<String>();
 	ArrayList<String> cEvents=new ArrayList<String>();
+	ArrayList<String> cEventsSub=new ArrayList<String>();
 	String dpath;
-    @Override
+    @SuppressLint("NewApi")
+	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
       //To remove title
@@ -88,30 +90,66 @@ public class LandingActivity extends Activity {
 				startActivity(i,scaleBundle);
 			}
 		});*/
-        landingButton.setOnTouchListener(new View.OnTouchListener() {
-			
-			@TargetApi(Build.VERSION_CODES.HONEYCOMB)
-			@SuppressLint("NewApi")
-			@Override
-			public boolean onTouch(View v, MotionEvent event) {
-				// TODO Auto-generated method stub
-				if(event.getAction()==MotionEvent.ACTION_DOWN)
-				{
-
-					Bundle scaleBundle=ActivityOptions.makeCustomAnimation(LandingActivity.this,R.anim.slide_in_down,R.anim.slide_out_up).toBundle();
-					i.putStringArrayListExtra("cname",cNames);
-					i.putStringArrayListExtra("cphone",cNumber);
-					i.putStringArrayListExtra("cevent",cEvents);
-					
-					
-					startActivity(i,scaleBundle);
-				}
+        Log.d("api level",String.valueOf(Build.VERSION.SDK_INT));
+        
+        
+        if( Build.VERSION.SDK_INT>=16)
+        {
+        	
+	        
+	        landingButton.setOnTouchListener(new View.OnTouchListener() {
 				
-		
-				return false;
-			}
-		});
-       
+				@TargetApi(Build.VERSION_CODES.HONEYCOMB)
+				@SuppressLint("NewApi")
+				@Override
+				public boolean onTouch(View v, MotionEvent event) {
+					// TODO Auto-generated method stub
+					if(event.getAction()==MotionEvent.ACTION_DOWN)
+					{
+	
+						Bundle scaleBundle=ActivityOptions.makeCustomAnimation(LandingActivity.this,R.anim.slide_in_down,R.anim.slide_out_up).toBundle();
+						i.putStringArrayListExtra("cname",cNames);
+						i.putStringArrayListExtra("cphone",cNumber);
+						i.putStringArrayListExtra("cevent",cEvents);
+						i.putStringArrayListExtra("ceventsub",cEventsSub);
+						
+						
+						startActivity(i,scaleBundle);
+					}
+					
+			
+					return false;
+				}
+			});
+        }
+        else
+        {
+        		landingButton.setOnTouchListener(new View.OnTouchListener() {
+				
+				
+				@Override
+				public boolean onTouch(View v, MotionEvent event) {
+					// TODO Auto-generated method stub
+					if(event.getAction()==MotionEvent.ACTION_DOWN)
+					{
+	
+						
+						i.putStringArrayListExtra("cname",cNames);
+						i.putStringArrayListExtra("cphone",cNumber);
+						i.putStringArrayListExtra("cevent",cEvents);
+						i.putStringArrayListExtra("ceventsub",cEventsSub);
+						
+						
+						startActivity(i);
+						overridePendingTransition(R.anim.slide_in_down,R.anim.slide_out_up);
+					}
+					
+			
+					return false;
+				}
+			});
+        	
+        }
     }
     private void somePreliminaryDatabaseTests() throws JSONException
 	{
@@ -129,12 +167,18 @@ public class LandingActivity extends Activity {
             	//---copy the db from the assets folder into 
             	// the databases folder---
                 CopyDB(getBaseContext().getAssets().open("mydb"),
-                    new FileOutputStream(destPath + "/MyDB"));
+                        new FileOutputStream(destPath + "/shaastraDB"));
                 
                 
             }
-                
             
+            File f2= new File(destPath + "/shaastraDB");
+            if(!f2.exists())
+            {
+            	CopyDB(getBaseContext().getAssets().open("mydb"),
+                        new FileOutputStream(destPath + "/shaastraDB"));
+            }
+           
             
             //writeToSD();
             
@@ -154,6 +198,7 @@ public class LandingActivity extends Activity {
             		cNames.add(c.getString(1));
             		cNumber.add(c.getString(2));
             		cEvents.add(c.getString(3));
+            		cEventsSub.add(c.getString(4));
             		//Log.d("event",c.getString(3));
                 //DisplayContact(c);
             } while (c.moveToNext());
@@ -186,13 +231,14 @@ public class LandingActivity extends Activity {
 			String coordID = j.getString("id");
 			String eventName = j.getString("department");
 			String phone = j.getString("phone");
+			String subevent = j.getString("subdepartment");
 			cNumber.add(phone);
 			ContentValues cv = new ContentValues();
 			cv.put("_id", coordID);
 			cv.put("coordName", coordName);
 			cv.put("phone", phone);
 			cv.put("eventName", eventName);
-			db.insertContact(coordID,coordName,phone,eventName);
+			db.insertContact(coordID,coordName,phone,eventName,subevent);
 		
 		}
 		

@@ -62,13 +62,18 @@ public class SuperAwesomeCardFragment2 extends Fragment {
 	ArrayList<String> con=new ArrayList<String>();
 	ArrayList<String> pon=new ArrayList<String>();
 	ArrayList<String> eon=new ArrayList<String>();
+	ArrayList<String> eson=new ArrayList<String>();
 	String cString[][]= new String[11][200];
 	String pString[][]= new String[11][200];
-	
+
+	String eString[][]= new String[11][200];
+	String evString[][]= new String[11][200];
 	int len[]=new int[11];
 	int plen[]=new int[11];
+	int eslen[]=new int[11];
+	int evlen[]=new int[11];
 	
-	public static SuperAwesomeCardFragment2 newInstance(int position,ArrayList<String> cNames,ArrayList<String> cNumber,ArrayList<String> cEvents) {
+	public static SuperAwesomeCardFragment2 newInstance(int position,ArrayList<String> cNames,ArrayList<String> cNumber,ArrayList<String> cEvents,ArrayList<String> cEventsSub) {
 		SuperAwesomeCardFragment2 f = new SuperAwesomeCardFragment2();
 		
 		//Collections.copy(cNames, con);
@@ -77,6 +82,7 @@ public class SuperAwesomeCardFragment2 extends Fragment {
 		b.putStringArrayList("cname", cNames);
 		b.putStringArrayList("cphone", cNumber);
 		b.putStringArrayList("cevent", cEvents);
+		b.putStringArrayList("ceventsub", cEventsSub);
 		
 		f.setArguments(b);
 		return f;
@@ -90,12 +96,17 @@ public class SuperAwesomeCardFragment2 extends Fragment {
 		ArrayList<String> c= getArguments().getStringArrayList("cname");
 		ArrayList<String> p= getArguments().getStringArrayList("cphone");
 		ArrayList<String> e= getArguments().getStringArrayList("cevent");
+		ArrayList<String> es= getArguments().getStringArrayList("ceventsub");
+
 		con.addAll(c);
 		pon.addAll(p);
 		eon.addAll(e);
+		eson.addAll(es);
 		for(int i=0;i<10;i++){
 			len[i]=0;
 			plen[i]=0;
+			eslen[i]=0;
+			evlen[i]=0;
 		}
 		
 		int flag=0;
@@ -107,6 +118,9 @@ public class SuperAwesomeCardFragment2 extends Fragment {
 				{
 					cString[j][len[j]++]=con.get(i);
 					pString[j][plen[j]++]=pon.get(i);
+					eString[j][eslen[j]++]=eson.get(i);
+					evString[j][evlen[j]++]=eon.get(i);
+				
 				}	
 					
 			}
@@ -148,13 +162,13 @@ public class SuperAwesomeCardFragment2 extends Fragment {
 			ArrayList<Coord> rowItems =new ArrayList<Coord>();
 			if(position==0)
 				for (int i = 0; i < con.size(); i++) {
-					Coord item = new Coord(con.get(i),pon.get(i));
+					Coord item = new Coord(con.get(i),pon.get(i),eon.get(i),eson.get(i));
 						rowItems.add(item);
 				}
 			else
 			{
 				for(int i=0;i<len[position];i++){
-					Coord item=new Coord(cString[position][i],pString[position][i]);
+					Coord item=new Coord(cString[position][i],pString[position][i],eString[position][i],evString[position][i]);
 					rowItems.add(item);
 				}
 					

@@ -23,8 +23,14 @@ public class LectureActivity extends FragmentActivity {
 	 private PagerAdapter mPagerAdapter;
 	 private ViewFlipper v;
 	 private int cur=0;
-	 String[] lecData=new String[]{"Date1 Time1 Venue1","Date2 Time2 Venue2","Date3 Time3 Venue3","Date4 Time4 Venue4","Date5 Time5 Venue5","Date6 Time6 Venue6","Date7 Time7 Venue7","Date8 Time8 Venue8","Date9 Time9 Venue9","Date10 Time10 Venue10","Date11 Time11 Venue11","Date12 Time12 Venue12","Date13 Time13 Venue13","Date14 Time14 Venue14","Date15 Time15 Venue15"};
+	 String[] lecData=new String[]{"7th Jan 12pm ICSR","4th Jan 12 pm ICSR","5th Jan 12 pm CLT","6th Jan 10 am ICSR","7th Jan 10 am ICSR","4th Jan 6pm ICSR","","5th Jan 10 am ICSR","4th Jan 4 pm ICSR","4th Jan 2 pm ICSR","6th Jan 2 pm ICSR","7th Jan 2 pm ICSR","6th Jan 4 pm ICSR","5th Jan 12 pm ICSR",""};
 	 String[] lecName=new String[]{"Dr.Richard Stallman","Amitabh Shah","Shravan and Sanjay Kumaran","S.Narasinga Rao","Raja Manohar","Anirudh Sharma","V.P.Agrawal","Manoj Pant","Sharmila Bhattacharya","John R Adler","Bikash Sinha","Anant Agarwal","Ajit Narayanan","Srinivasa Varadhan","Dave Lavery"};
+	 @Override
+		public void finish() {
+			// TODO Auto-generated method stub
+			super.finish();
+			overridePendingTransition(R.anim.slid_in_left,R.anim.slid_out_right);
+		}
 	 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

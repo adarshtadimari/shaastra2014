@@ -41,6 +41,12 @@ public class EventList extends Activity {
 	 
 	 
 	private CardUI mCardView;
+	@Override
+	public void finish() {
+		// TODO Auto-generated method stub
+		super.finish();
+		overridePendingTransition(R.anim.slid_in_left,R.anim.slid_out_right);
+	}
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {

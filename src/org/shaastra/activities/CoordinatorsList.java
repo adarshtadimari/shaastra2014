@@ -42,6 +42,7 @@ public class CoordinatorsList extends FragmentActivity {
 	ArrayList<String> cn=new ArrayList<String>();
 	ArrayList<String> pn=new ArrayList<String>();
 	ArrayList<String> en=new ArrayList<String>();
+	ArrayList<String> esn=new ArrayList<String>();
 	private Drawable oldBackground = null;
 	private int currentColor = 0xFF25495F;
 	
@@ -63,10 +64,12 @@ public class CoordinatorsList extends FragmentActivity {
 		ArrayList<String>cNames= (ArrayList<String>)getIntent().getStringArrayListExtra("cname");
 		ArrayList<String>cNumber= (ArrayList<String>)getIntent().getStringArrayListExtra("cphone");
 		ArrayList<String>cEvents= (ArrayList<String>)getIntent().getStringArrayListExtra("cevent");
+		ArrayList<String>cEventsSub= (ArrayList<String>)getIntent().getStringArrayListExtra("ceventsub");
 		
 		cn.addAll(cNames);
 		pn.addAll(cNumber);
 		en.addAll(cEvents);
+		esn.addAll(cEventsSub);
 		tabs = (PagerSlidingTabStrip) findViewById(R.id.tabs2);
 		pager = (ViewPager) findViewById(R.id.pager2);
 		adapter = new MyPagerAdapter(getSupportFragmentManager());
@@ -160,7 +163,7 @@ public class CoordinatorsList extends FragmentActivity {
 
 		@Override
 		public Fragment getItem(int position) {
-			return SuperAwesomeCardFragment2.newInstance(position,cn,pn,en);
+			return SuperAwesomeCardFragment2.newInstance(position,cn,pn,en,esn);
 		}
 
 	}

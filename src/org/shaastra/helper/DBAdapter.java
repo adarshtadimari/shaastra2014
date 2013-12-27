@@ -22,6 +22,7 @@ public class DBAdapter {
     static final String KEY_NAME = "name";
     static final String KEY_PHONE = "phone";
     static final String KEY_EVENT = "event";
+    static final String KEY_EVENT_SUB = "subevent";
     static final String EVENT_ID="_id";
     static final String EVENT_NAME= "eventname";
     static final String EVENT_INTRODUCTION="introduction";
@@ -32,7 +33,7 @@ public class DBAdapter {
     
     static final String TAG = "DBAdapter";
 
-    static final String DATABASE_NAME = "MyDB";
+    static final String DATABASE_NAME = "shaastraDB";
     static final String DATABASE_TABLE = "contacts";
     static final String DATABASE_TABLE_EVENT = "events";
     static final int DATABASE_VERSION = 2;
@@ -93,13 +94,15 @@ public class DBAdapter {
     }
 
     //---insert a contact into the database---
-    public long insertContact(String id,String name, String phone,String event) 
+    public long insertContact(String id,String name, String phone,String event,String subevent) 
     {
         ContentValues initialValues = new ContentValues();
         initialValues.put(KEY_ROWID, id);
         initialValues.put(KEY_NAME, name);
         initialValues.put(KEY_PHONE, phone);
         initialValues.put(KEY_EVENT, event);
+        initialValues.put(KEY_EVENT_SUB, subevent);
+        
         return db.insert(DATABASE_TABLE, null, initialValues);
     }
     public long insertEvent(String id,String eventName, String introduction, String format, String prize,String venueID)
@@ -123,7 +126,7 @@ public class DBAdapter {
     public Cursor getAllContacts()
     {
         return db.query(DATABASE_TABLE, new String[] {KEY_ROWID, KEY_NAME,
-                KEY_PHONE,KEY_EVENT}, null, null, null, null, null);
+                KEY_PHONE,KEY_EVENT,KEY_EVENT_SUB}, null, null, null, null, null);
     }
     public Cursor getAllEvents()
     {
@@ -136,7 +139,7 @@ public class DBAdapter {
     {
         Cursor mCursor =
                 db.query(true, DATABASE_TABLE, new String[] {KEY_ROWID,
-                KEY_NAME, KEY_PHONE,KEY_EVENT}, KEY_ROWID + "=" + rowId, null,
+                KEY_NAME, KEY_PHONE,KEY_EVENT,KEY_EVENT_SUB}, KEY_ROWID + "=" + rowId, null,
                 null, null, null, null);
         if (mCursor != null) {
             mCursor.moveToFirst();

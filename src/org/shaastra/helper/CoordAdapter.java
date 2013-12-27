@@ -46,6 +46,7 @@ public long getItemId(int position) {
 private class ViewHolder {
     TextView Name;
     TextView Phone;
+    TextView subEvent;
 }
 
 @Override
@@ -62,12 +63,14 @@ public View getView(final int position, View convertView, ViewGroup parent) {
         
         holder.Name = (TextView)convertView.findViewById(R.id.cordname);
         holder.Phone = (TextView) convertView.findViewById(R.id.cordphone);
+        holder.subEvent =(TextView)convertView.findViewById(R.id.cordsub);
          convertView.setTag(holder);
     } else {
         holder = (ViewHolder) convertView.getTag();
     }
     holder.Name.setText(mDisplayedValues.get(position).name);
     holder.Phone.setText(mDisplayedValues.get(position).phone);
+    holder.subEvent.setText(mDisplayedValues.get(position).subEvent);
     
 
    
@@ -101,6 +104,7 @@ public Filter getFilter() {
              *  else does the Filtering and returns FilteredArrList(Filtered)  
              *
              ********/
+            
             if (constraint == null || constraint.length() == 0) {
 
                 // set the Original result to return  
@@ -110,8 +114,14 @@ public Filter getFilter() {
                 constraint = constraint.toString().toLowerCase();
                 for (int i = 0; i < mOriginalValues.size(); i++) {
                     String data = mOriginalValues.get(i).name;
-                    if (data.toLowerCase().startsWith(constraint.toString())) {
-                        FilteredArrList.add(new Coord(mOriginalValues.get(i).name,mOriginalValues.get(i).phone));
+                    String data2 = mOriginalValues.get(i).name2;
+                    String data3 = mOriginalValues.get(i).event;
+                    String data4 = mOriginalValues.get(i).subEvent;
+                    String data5 = mOriginalValues.get(i).name3;
+                    
+                    
+                    if (data.toLowerCase().startsWith(constraint.toString())||(data2.toLowerCase().startsWith(constraint.toString()))||(data3.toLowerCase().startsWith(constraint.toString()))||(data4.toLowerCase().startsWith(constraint.toString()))||(data5.toLowerCase().startsWith(constraint.toString()))) {
+                        FilteredArrList.add(new Coord(mOriginalValues.get(i).name,mOriginalValues.get(i).phone,mOriginalValues.get(i).subEvent,mOriginalValues.get(i).event));
                     }
                 }
                 // set the Filtered result to return

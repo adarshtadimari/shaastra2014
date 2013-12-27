@@ -36,6 +36,12 @@ public class TilesActivity extends Activity {
 	private Vibrator myvib;
 	private int flag =1;
 	private Intent i,i2,i3,i4,i5;
+	@Override
+	public void finish() {
+		// TODO Auto-generated method stub
+		super.finish();
+		overridePendingTransition(R.anim.slide_in_up,R.anim.slid_out_down);
+	}
     @SuppressWarnings("deprecation")
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +55,7 @@ public class TilesActivity extends Activity {
         final ArrayList<String> cNames=(ArrayList<String>) getIntent().getStringArrayListExtra("cname");
         final ArrayList<String> cNumber=(ArrayList<String>) getIntent().getStringArrayListExtra("cphone");
         final ArrayList<String> cEvents=(ArrayList<String>) getIntent().getStringArrayListExtra("cevent");
+        final ArrayList<String> cEventsSub=(ArrayList<String>) getIntent().getStringArrayListExtra("ceventsub");
         
         //Log.d("val",cNames.get(3));
        
@@ -116,9 +123,11 @@ public class TilesActivity extends Activity {
 				{
 					v.animate().setInterpolator(new OvershootInterpolator()).scaleX(1f).scaleY(1f);
 					v.setAlpha((float)0.75);
-					Bundle scaleBundle=ActivityOptions.makeScaleUpAnimation(v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
-					startActivity(i,scaleBundle);
-					
+					 if( Build.VERSION.SDK_INT>=16)
+					 {
+						 Bundle scaleBundle=ActivityOptions.makeScaleUpAnimation(v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+						 startActivity(i,scaleBundle);
+					 }
 				}
 				
 				return false;
@@ -165,22 +174,37 @@ public class TilesActivity extends Activity {
 				{
 
 			    	myvib.vibrate(25);
-					v.setAlpha((float)0.4);
-					v.animate().setInterpolator(new DecelerateInterpolator()).scaleX(0.9f).scaleY(0.9f);
+			    	if(Build.VERSION.SDK_INT>=12)
+			    	{
+			    		v.setAlpha((float)0.4);
+			    		v.animate().setInterpolator(new DecelerateInterpolator()).scaleX(0.9f).scaleY(0.9f);
+			    	}
+					
 					
 				}
 				if(event.getAction()==MotionEvent.ACTION_UP)
 				{
-					v.setAlpha((float)0.75);
+					if(Build.VERSION.SDK_INT>=12)
+			    	{
+			    		v.setAlpha((float)0.75);
+			    		v.animate().setInterpolator(new OvershootInterpolator()).scaleX(1f).scaleY(1f);
+			    	}
 					
-					Bundle scaleBundle=ActivityOptions.makeScaleUpAnimation(v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
-					v.animate().setInterpolator(new OvershootInterpolator()).scaleX(1f).scaleY(1f);
+					
+					
 					i2.putStringArrayListExtra("cname", cNames);
 					i2.putStringArrayListExtra("cphone", cNumber);
 					i2.putStringArrayListExtra("cevent", cEvents);
-					
-					startActivity(i2,scaleBundle);
-					
+					i2.putStringArrayListExtra("ceventsub", cEventsSub);
+					if( Build.VERSION.SDK_INT>=16)
+					 {
+						Bundle scaleBundle=ActivityOptions.makeScaleUpAnimation(v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+						startActivity(i2,scaleBundle);
+					 }
+					 else
+					 {
+						 startActivity(i2);
+					 }
 				}
 		
 				return false;
@@ -197,16 +221,30 @@ public class TilesActivity extends Activity {
 				{
 
 			    	myvib.vibrate(25);
-					v.setAlpha((float)0.4);
-					v.animate().setInterpolator(new DecelerateInterpolator()).scaleX(0.9f).scaleY(0.9f);
+			    	if(Build.VERSION.SDK_INT>=12)
+			    	{
+			    		v.setAlpha((float)0.4);
+			    		v.animate().setInterpolator(new DecelerateInterpolator()).scaleX(0.9f).scaleY(0.9f);
+			    	}
+					
 					
 				}
 				if(event.getAction()==MotionEvent.ACTION_UP)
 				{
-					v.setAlpha((float)0.75);
-					v.animate().setInterpolator(new OvershootInterpolator()).scaleX(1f).scaleY(1f);
-					Bundle scaleBundle=ActivityOptions.makeScaleUpAnimation(v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
-					startActivity(i,scaleBundle);
+					if(Build.VERSION.SDK_INT>=12)
+			    	{
+			    		v.setAlpha((float)0.75);
+			    		v.animate().setInterpolator(new OvershootInterpolator()).scaleX(1f).scaleY(1f);
+			    	}
+					
+					 if( Build.VERSION.SDK_INT>=16){
+						Bundle scaleBundle=ActivityOptions.makeScaleUpAnimation(v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+						startActivity(i,scaleBundle);
+					 }
+					 else
+					 {
+						startActivity(i); 
+					 }
 					
 				}
 		
@@ -225,13 +263,22 @@ public class TilesActivity extends Activity {
 			{
 	
 		    	myvib.vibrate(25);
-				v.setAlpha((float)0.4);
+		    	if(Build.VERSION.SDK_INT>=12)
+		    	{
+		    		v.setAlpha((float)0.4);
+		    		v.animate().setInterpolator(new OvershootInterpolator()).scaleX(1f).scaleY(1f);
+		    	}
 				
 				
 			}
 			if(event.getAction()==MotionEvent.ACTION_UP)
 			{
-				v.setAlpha((float)0.75);
+				if(Build.VERSION.SDK_INT>=12)
+		    	{
+		    		v.setAlpha((float)0.75);
+		    		v.animate().setInterpolator(new OvershootInterpolator()).scaleX(1f).scaleY(1f);
+		    		
+		    	}
 				
 				
 				
@@ -254,18 +301,32 @@ public class TilesActivity extends Activity {
 				{
 
 			    	myvib.vibrate(25);
-					v.setAlpha((float)0.4);
-					v.animate().setInterpolator(new DecelerateInterpolator()).scaleX(0.9f).scaleY(0.9f);
+			    	if(Build.VERSION.SDK_INT>=12)
+			    	{
+			    		v.setAlpha((float)0.4);
+			    		v.animate().setInterpolator(new DecelerateInterpolator()).scaleX(0.9f).scaleY(0.9f);
+			    	}
+					
 					
 				}
 				if(event.getAction()==MotionEvent.ACTION_UP)
 				{
-					v.setAlpha((float)0.75);
-					Bundle scaleBundle=ActivityOptions.makeScaleUpAnimation(v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
-					v.animate().setInterpolator(new OvershootInterpolator()).scaleX(1f).scaleY(1f);
-					Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/Shaastra"));
-					startActivity(browserIntent,scaleBundle);
+					if(Build.VERSION.SDK_INT>=12)
+			    	{
+			    		v.setAlpha((float)0.75);
+			    		v.animate().setInterpolator(new OvershootInterpolator()).scaleX(1f).scaleY(1f);
+			    	}
 					
+					
+					Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/Shaastra"));
+					if(Build.VERSION.SDK_INT>=16){
+						Bundle scaleBundle=ActivityOptions.makeScaleUpAnimation(v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+						startActivity(browserIntent,scaleBundle);
+					}
+					else
+					{
+						startActivity(browserIntent);
+					}
 				}
 		
 				return false;
@@ -282,17 +343,32 @@ public class TilesActivity extends Activity {
 				{
 
 			    	myvib.vibrate(25);
-					v.setAlpha((float)0.4);
-					v.animate().setInterpolator(new DecelerateInterpolator()).scaleX(0.9f).scaleY(0.9f);
+			    	if(Build.VERSION.SDK_INT>=12)
+			    	{
+			    		v.setAlpha((float)0.4);
+			    		v.animate().setInterpolator(new DecelerateInterpolator()).scaleX(0.9f).scaleY(0.9f);
+			    	}
+					
 				}
 				if(event.getAction()==MotionEvent.ACTION_UP)
 				{
-					v.setAlpha((float)0.75);
-					v.animate().setInterpolator(new OvershootInterpolator()).scaleX(1f).scaleY(1f);
-					Bundle scaleBundle=ActivityOptions.makeScaleUpAnimation(v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
-					Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://plus.google.com/u/0/109668817957263291803/about"));
-					startActivity(browserIntent,scaleBundle);
+					if(Build.VERSION.SDK_INT>=12)
+			    	{
+			    		v.setAlpha((float)0.75);
+			    		v.animate().setInterpolator(new OvershootInterpolator()).scaleX(1f).scaleY(1f);
+			    	}
 					
+					
+					Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://plus.google.com/u/0/109668817957263291803/about"));
+					if(Build.VERSION.SDK_INT>=16)
+					{
+						Bundle scaleBundle=ActivityOptions.makeScaleUpAnimation(v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+						startActivity(browserIntent,scaleBundle);
+					}
+					else
+					{
+						startActivity(browserIntent);
+					}
 				}
 		
 				return false;
@@ -310,17 +386,33 @@ public class TilesActivity extends Activity {
 				{
 
 			    	myvib.vibrate(25);
-					v.setAlpha((float)0.4);
-					v.animate().setInterpolator(new DecelerateInterpolator()).scaleX(0.9f).scaleY(0.9f);
+			    	if(Build.VERSION.SDK_INT>=12)
+			    	{
+			    		v.setAlpha((float)0.4);
+			    		v.animate().setInterpolator(new DecelerateInterpolator()).scaleX(0.9f).scaleY(0.9f);
+			    	}
+					
 					
 				}
 				if(event.getAction()==MotionEvent.ACTION_UP)
 				{
-					v.setAlpha((float)0.75);
-					v.animate().setInterpolator(new OvershootInterpolator()).scaleX(1f).scaleY(1f);
-					Bundle scaleBundle=ActivityOptions.makeScaleUpAnimation(v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+					if(Build.VERSION.SDK_INT>=12)
+			    	{
+			    		v.setAlpha((float)0.75);
+			    		v.animate().setInterpolator(new OvershootInterpolator()).scaleX(1f).scaleY(1f);
+			    	}
+					
+					
 					Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.youtube.com/user/iitmshaastra"));
-					startActivity(browserIntent,scaleBundle);
+					if(Build.VERSION.SDK_INT>=16)
+					{
+						Bundle scaleBundle=ActivityOptions.makeScaleUpAnimation(v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+						startActivity(browserIntent,scaleBundle);
+					}
+					else
+					{
+						startActivity(browserIntent);
+					}
 					
 				}
 		
@@ -338,16 +430,33 @@ public class TilesActivity extends Activity {
 		{
 
 	    	myvib.vibrate(25);
-			v.setAlpha((float)0.4);
-			v.animate().setInterpolator(new DecelerateInterpolator()).scaleX(0.9f).scaleY(0.9f);
+	    	if(Build.VERSION.SDK_INT>=12)
+	    	{
+	    		v.setAlpha((float)0.4);
+	    		v.animate().setInterpolator(new DecelerateInterpolator()).scaleX(0.9f).scaleY(0.9f);
+	    	}
+			
 		}
 		if(event.getAction()==MotionEvent.ACTION_UP)
 		{
-			v.setAlpha((float)0.75);
-			v.animate().setInterpolator(new OvershootInterpolator()).scaleX(1f).scaleY(1f);
-			Bundle scaleBundle=ActivityOptions.makeScaleUpAnimation(v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+			if(Build.VERSION.SDK_INT>=12)
+	    	{
+	    		v.setAlpha((float)0.75);
+	    		v.animate().setInterpolator(new OvershootInterpolator()).scaleX(1f).scaleY(1f);
+	    	}
+			
+			
 			Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/ShaastraIITM"));
-			startActivity(browserIntent,scaleBundle);
+			if(Build.VERSION.SDK_INT>=16)
+			{
+				Bundle scaleBundle=ActivityOptions.makeScaleUpAnimation(v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+				startActivity(browserIntent,scaleBundle);
+			}
+			else
+			{
+				startActivity(browserIntent);
+			}
+			
 			
 		}
 
@@ -365,16 +474,30 @@ public class TilesActivity extends Activity {
 				{
 
 			    	myvib.vibrate(25);
-					v.setAlpha((float)0.4);
-					v.animate().setInterpolator(new DecelerateInterpolator()).scaleX(0.9f).scaleY(0.9f);
+			    	if(Build.VERSION.SDK_INT>=12)
+			    	{
+			    		v.setAlpha((float)0.4);
+			    		v.animate().setInterpolator(new DecelerateInterpolator()).scaleX(0.9f).scaleY(0.9f);
+			    	}
+					
 				}
 				if(event.getAction()==MotionEvent.ACTION_UP)
 				{
-					v.setAlpha((float)0.75);
-					v.animate().setInterpolator(new OvershootInterpolator()).scaleX(1f).scaleY(1f);
-					Bundle scaleBundle=ActivityOptions.makeScaleUpAnimation(v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+					if(Build.VERSION.SDK_INT>=12)
+			    	{
+			    		v.setAlpha((float)0.75);
+			    		v.animate().setInterpolator(new OvershootInterpolator()).scaleX(1f).scaleY(1f);
+			    	}
 					
-					startActivity(i4,scaleBundle);
+					if(Build.VERSION.SDK_INT>=16)
+					{
+						Bundle scaleBundle=ActivityOptions.makeScaleUpAnimation(v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+						startActivity(i4,scaleBundle);
+					}
+					else
+					{
+						startActivity(i4);
+					}
 					
 				}
 		
@@ -392,13 +515,21 @@ public class TilesActivity extends Activity {
 				{
 
 			    	myvib.vibrate(25);
-					v.setAlpha((float)0.4);
-					v.animate().setInterpolator(new DecelerateInterpolator()).scaleX(0.9f).scaleY(0.9f);
+			    	if(Build.VERSION.SDK_INT>=12)
+			    	{
+			    		v.setAlpha((float)0.4);
+			    		v.animate().setInterpolator(new DecelerateInterpolator()).scaleX(0.9f).scaleY(0.9f);
+			    	}
+					
 				}
 				if(event.getAction()==MotionEvent.ACTION_UP)
 				{
-					v.setAlpha((float)0.75);
-					v.animate().setInterpolator(new OvershootInterpolator()).scaleX(1f).scaleY(1f);
+					if(Build.VERSION.SDK_INT>=12)
+			    	{
+			    		v.setAlpha((float)0.75);
+			    		v.animate().setInterpolator(new OvershootInterpolator()).scaleX(1f).scaleY(1f);
+			    	}
+					
 					startActivity(i5);
 					
 				}
@@ -425,10 +556,9 @@ public class TilesActivity extends Activity {
 	    		return true;
 	        default:
 	            return super.onOptionsItemSelected(item);
-	    }
 	}
     
     
     
-    
+}
 }
