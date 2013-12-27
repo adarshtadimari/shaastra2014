@@ -35,7 +35,7 @@ public class EventActivity extends FragmentActivity {
 	
 	 String db[]={"Fire N Ice","Lunar Rover Challenge","Ultimate Engineer","Contraptions","Robowars","Junkyard Wars","Robotics"};
 	 String af[]={"Aerobotics","Wright Design","Paper Planes","TopGun","AirShow","Boeing National Aeromodelling Competition"};
-	 String cod1[]={"Open Programmin Contest","Reverse Coding","Triathlon","Debugging","Code Obfuscation","Automania","Hackfest Workshop"};
+	 String cod1[]={"Open Programming Contest","Reverse Coding","Triathlon","Debugging","Code Obfuscation","Automania","Hackfest Workshop"};
 	 String inv[]={"ProjectX","Shaastra Cube Open","Math Modelling","Puzzle Champ"};
 	 String qui[]={"Shaastra Junior Quiz","Shaastra Main Quiz","How Things Work","Auto Quiz"};
 	 String on[]={"Online Puzzle Champ","Online Math Modelling","Finance and Consultancy"};
@@ -95,8 +95,10 @@ public class EventActivity extends FragmentActivity {
               		if(c.getString(1).equalsIgnoreCase(try1[eventCatIndex][eventIndex]))
               		{
               			eventName= c.getString(1);
-              			eventIntroduction= c.getString(2);
-              			eventFormat= c.getString(3);
+              			eventIntroduction= c.getString(2)+"\n";
+              			eventFormat= c.getString(3)+"\n";
+              			
+              			
               			eventPrize= c.getString(4);
               			eventVenue= c.getString(5);
               			

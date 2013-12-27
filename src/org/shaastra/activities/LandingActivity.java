@@ -179,8 +179,9 @@ public class LandingActivity extends Activity {
                         new FileOutputStream(destPath + "/shaastraDB"));
             }
            
+          
             
-            //writeToSD();
+            
             
             
         } catch (FileNotFoundException e) {
@@ -204,7 +205,7 @@ public class LandingActivity extends Activity {
             } while (c.moveToNext());
         }
         
-       db.insertEvent("2","ROBOTICS" , "INTRasdasd", "FORMAT", "PRIZE", "VENUE");
+       //db.insertEvent("2","ROBOTICS" , "INTRasdasd", "FORMAT", "PRIZE", "VENUE");
        
        
         
@@ -239,6 +240,28 @@ public class LandingActivity extends Activity {
 			cv.put("phone", phone);
 			cv.put("eventName", eventName);
 			db.insertContact(coordID,coordName,phone,eventName,subevent);
+		
+		}
+		
+		db.close();
+		*/
+        /*
+		db.open();
+		String eventInfo = HTTPHelper.getData("http://www.shaastra.org/mobops/events/");
+		JSONObject eventJson = new JSONObject(eventInfo);
+		JSONArray events = eventJson.getJSONArray("events");
+		
+		for(int i = 0; i < events.length(); i++)
+		{
+			JSONObject j = events.getJSONObject(i);
+			
+			String eventName = j.getString("name");
+			String eventformat= j.getString("Event Format");
+			String id= j.getString("id");
+			String eventIntro=j.getString("Introduction");
+			String prizeMoney=j.getString("Prize Money");
+			//Log.d("events",eventName);
+			db.insertEvent(id,eventName , eventIntro, eventformat, prizeMoney, "VENUE");
 		
 		}
 		
@@ -295,7 +318,7 @@ public class LandingActivity extends Activity {
         File sd = Environment.getExternalStorageDirectory();
 
         if (sd.canWrite()) {
-            String currentDBPath = "MyDB";
+            String currentDBPath = "shaastraDB";
             String backupDBPath = "backupname.db";
             File currentDB = new File("/data/data/" + getPackageName() +
                     "/databases", currentDBPath);

@@ -21,6 +21,7 @@ public class Coord {
 		name1=new String();
 		name2=new String();
 		name3=new String();
+		
 		name1=parts[0];
 		if(parts.length>=2)
 		{

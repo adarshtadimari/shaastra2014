@@ -7,12 +7,13 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
        android:background="#000000"
-        android:layout_margin="4dp"
+        
          >
          <ScrollView
              android:background="@drawable/backblue" 
     		android:layout_width="match_parent"
     		android:layout_height="match_parent"
+    		
     		
     
      	>
@@ -30,9 +31,12 @@ All you will need is a flying machine tuned up to perform a specific set of task
 So grab the opportunity and play the hero!! Huddle up teams, form your own skunk works, fly down to Shaastra and may your passion, skill and talent escort you to that handsome cash prize!"
 			android:layout_width="wrap_content"
 			android:layout_height="match_parent"
-			android:layout_margin="10dp"
+			android:layout_marginTop="10dp"
+			android:layout_marginLeft="10dp"
+			android:layout_marginRight="10dp"
 			
 			android:textStyle="italic"
+			
 		/>
    </ScrollView>
  </LinearLayout>

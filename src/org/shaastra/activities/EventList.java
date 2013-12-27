@@ -26,7 +26,7 @@ public class EventList extends Activity {
 	Intent i;
 	 String db[]={"Fire N Ice","Lunar Rover Challenge","Ultimate Engineer","Contraptions","Robowars","Junkyard Wars","Robotics"};
 	 String af[]={"Aerobotics","Wright Design","Paper Planes","TopGun","AirShow","Boeing National Aeromodelling Competition"};
-	 String cod1[]={"Open Programmin Contest","Reverse Coding","Triathlon","Debugging","Code Obfuscation","Automania","Hackfest Workshop"};
+	 String cod1[]={"Open Programming Contest","Reverse Coding","Triathlon","Debugging","Code Obfuscation","Automania","Hackfest Workshop"};
 	 String inv[]={"ProjectX","Shaastra Cube Open","Math Modelling","Puzzle Champ"};
 	 String qui[]={"Shaastra Junior Quiz","Shaastra Main Quiz","How Things Work","Auto Quiz"};
 	 String on[]={"Online Puzzle Champ","Online Math Modelling","Finance and Consultancy"};
