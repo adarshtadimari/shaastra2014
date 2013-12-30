@@ -60,9 +60,9 @@ public class EventActivity extends FragmentActivity {
 	String eventFormat=new String();
 	String eventIntroduction=new String();
 	String eventPrize=new String();
+	String eventVenueID=new String();
 	String eventVenue=new String();
-	
-	
+	String eventLatLong=new String();
 	
 	@Override
 	public void finish() {
@@ -97,11 +97,11 @@ public class EventActivity extends FragmentActivity {
               			eventName= c.getString(1);
               			eventIntroduction= c.getString(2)+"\n";
               			eventFormat= c.getString(3)+"\n";
-              			
-              			
-              			eventPrize= c.getString(4);
-              			eventVenue= c.getString(5);
-              			
+              			eventPrize= c.getString(4)+"\n";
+              			eventVenueID= c.getString(5);
+              			Cursor c2=db.getVenue(Integer.valueOf(eventVenueID));
+              			eventVenue=c2.getString(1);
+              			eventLatLong=c2.getString(2);
               		}
             	  Log.d("eventevent",c.getString(3));
                   //DisplayContact(c);
@@ -199,7 +199,7 @@ public class EventActivity extends FragmentActivity {
 
 		@Override
 		public Fragment getItem(int position) {
-			return SuperAwesomeCardFragment.newInstance(position,eventIntroduction,eventVenue,eventFormat,eventPrize);
+			return SuperAwesomeCardFragment.newInstance(position,eventIntroduction,eventVenue,eventFormat,eventPrize,eventLatLong);
 		}
 
 	}

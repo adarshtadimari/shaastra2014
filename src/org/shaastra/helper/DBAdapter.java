@@ -29,13 +29,17 @@ public class DBAdapter {
     static final String EVENT_FORMAT="format";
     static final String EVENT_PRIZE="prize";
     static final String EVENT_VENUEID="venueid";
-   
+    static final String VENUE_ID="_id";
+    static final String VENUE_NAME="name";
+    static final String VENUE_LATLONG="latlong";
+    
     
     static final String TAG = "DBAdapter";
 
-    static final String DATABASE_NAME = "shaastraDB";
+    static final String DATABASE_NAME = "shaastraDB2";
     static final String DATABASE_TABLE = "contacts";
     static final String DATABASE_TABLE_EVENT = "events";
+    static final String DATABASE_TABLE_VENUE = "venue";
     static final int DATABASE_VERSION = 2;
 
     static final String DATABASE_CREATE =
@@ -140,6 +144,17 @@ public class DBAdapter {
         Cursor mCursor =
                 db.query(true, DATABASE_TABLE, new String[] {KEY_ROWID,
                 KEY_NAME, KEY_PHONE,KEY_EVENT,KEY_EVENT_SUB}, KEY_ROWID + "=" + rowId, null,
+                null, null, null, null);
+        if (mCursor != null) {
+            mCursor.moveToFirst();
+        }
+        return mCursor;
+    }
+    public Cursor getVenue(long rowId) throws SQLException 
+    {
+        Cursor mCursor =
+                db.query(true, DATABASE_TABLE_VENUE, new String[] {VENUE_ID,
+                VENUE_NAME, VENUE_LATLONG}, VENUE_ID + "=" + rowId, null,
                 null, null, null, null);
         if (mCursor != null) {
             mCursor.moveToFirst();

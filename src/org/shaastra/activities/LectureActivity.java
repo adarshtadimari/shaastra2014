@@ -23,7 +23,8 @@ public class LectureActivity extends FragmentActivity {
 	 private PagerAdapter mPagerAdapter;
 	 private ViewFlipper v;
 	 private int cur=0;
-	 String[] lecData=new String[]{"7th Jan 12pm ICSR","4th Jan 12 pm ICSR","5th Jan 12 pm CLT","6th Jan 10 am ICSR","7th Jan 10 am ICSR","4th Jan 6pm ICSR","","5th Jan 10 am ICSR","4th Jan 4 pm ICSR","4th Jan 2 pm ICSR","6th Jan 2 pm ICSR","7th Jan 2 pm ICSR","6th Jan 4 pm ICSR","5th Jan 12 pm ICSR",""};
+	 String[] lecData=new String[]{"7th Jan 12pm IC&SR","4th Jan 12 pm IC&SR","5th Jan 12 pm CLT","6th Jan 10 am IC&SR","7th Jan 10 am IC&SR","4th Jan 6pm IC&SR","","5th Jan 10 am IC&SR","4th Jan 4 pm IC&SR","4th Jan 2 pm IC&SR","6th Jan 2 pm IC&SR","7th Jan 2 pm IC&SR","6th Jan 4 pm IC&SR","5th Jan 12 pm IC&SR",""};
+	
 	 String[] lecName=new String[]{"Dr.Richard Stallman","Amitabh Shah","Shravan and Sanjay Kumaran","S.Narasinga Rao","Raja Manohar","Anirudh Sharma","V.P.Agrawal","Manoj Pant","Sharmila Bhattacharya","John R Adler","Bikash Sinha","Anant Agarwal","Ajit Narayanan","Srinivasa Varadhan","Dave Lavery"};
 	 @Override
 		public void finish() {

@@ -166,19 +166,21 @@ public class LandingActivity extends Activity {
             	
             	//---copy the db from the assets folder into 
             	// the databases folder---
-                CopyDB(getBaseContext().getAssets().open("mydb"),
-                        new FileOutputStream(destPath + "/shaastraDB"));
+                CopyDB(getBaseContext().getAssets().open("sdb"),
+                        new FileOutputStream(destPath + "/shaastraDB2"));
                 
                 
             }
             
-            File f2= new File(destPath + "/shaastraDB");
+            File f2= new File(destPath + "/shaastraDB2");
             if(!f2.exists())
             {
-            	CopyDB(getBaseContext().getAssets().open("mydb"),
-                        new FileOutputStream(destPath + "/shaastraDB"));
+            	CopyDB(getBaseContext().getAssets().open("sdb"),
+                        new FileOutputStream(destPath + "/shaastraDB2"));
             }
-           
+            CopyDB(getBaseContext().getAssets().open("sdb"),
+                    new FileOutputStream(destPath + "/shaastraDB2"));
+            
           
             
             

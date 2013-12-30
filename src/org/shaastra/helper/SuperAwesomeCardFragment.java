@@ -60,9 +60,10 @@ public class SuperAwesomeCardFragment extends Fragment {
 	String eformat=new String();
 	String evenue=new String();
 	String eprize=new String();
+	String elatlong=new String();
 	
 	
-	public static SuperAwesomeCardFragment newInstance(int position,String introduction,String venue,String format,String prize) {
+	public static SuperAwesomeCardFragment newInstance(int position,String introduction,String venue,String format,String prize,String latlong) {
 		SuperAwesomeCardFragment f = new SuperAwesomeCardFragment();
 		
 		Bundle b = new Bundle();
@@ -71,7 +72,7 @@ public class SuperAwesomeCardFragment extends Fragment {
 		b.putString("format", format);
 		b.putString("venue", venue);
 		b.putString("prize", prize);		
-		
+		b.putString("latlong", latlong);
 		f.setArguments(b);
 		return f;
 	}
@@ -86,9 +87,11 @@ public class SuperAwesomeCardFragment extends Fragment {
 		eformat=getArguments().getString("format");
 		eprize=getArguments().getString("prize");
 		evenue=getArguments().getString("venue");
+		elatlong=getArguments().getString("latlong");
 			
 	}
 
+	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -125,7 +128,7 @@ public class SuperAwesomeCardFragment extends Fragment {
 			String Venue=new String();
 			Venue=evenue;
 			
-			final String SAC="12.989201,80.237712";
+			final String SAC=elatlong;
 			//String start=String.valueOf(l.getLatitude())+String.valueOf(l.getLongitude());
 		    /*
 			View v1=inflater.inflate(R.layout.map, container,false);
@@ -141,7 +144,15 @@ public class SuperAwesomeCardFragment extends Fragment {
 			v1.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT));
 			TextView location= (TextView)v1.findViewById(R.id.locationText);
 			Button mapButton=(Button)v1.findViewById(R.id.mapButton);
-			
+			if(evenue.equalsIgnoreCase("NONE"))
+			{
+				mapButton.setAlpha(0);
+			}
+			else
+			{
+				mapButton.setAlpha(1);
+			}
+				
 			location.setText(Venue);
 			mapButton.setOnTouchListener(new View.OnTouchListener() {
 				
