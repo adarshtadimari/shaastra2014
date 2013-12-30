@@ -92,6 +92,27 @@
             android:layout_height="wrap_content"
             android:background="@drawable/boeing_converted"
             android:layout_margin="10dp"/>
+        <ImageView 
+             android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/paypal"
+            android:layout_margin="10dp"/>
+         <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hospitality Partner"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:gravity="center"
+        />
+        <ImageView 
+           android:layout_gravity="center"
+            android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+            android:background="@drawable/sbi"
+            android:layout_margin="10dp"/>
+       
         
         <TextView 
         android:layout_width="match_parent"
@@ -193,6 +214,12 @@
                 android:layout_height="wrap_content"
             android:background="@drawable/gre1"
             android:layout_margin="10dp"/>
+         <ImageView 
+        android:layout_gravity="center"
+            android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+            android:background="@drawable/green"
+            android:layout_margin="10dp"/>
         <TextView 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -238,6 +265,12 @@
             android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
             android:background="@drawable/birmingham_city_converted"
+            android:layout_margin="10dp"/>
+           <ImageView 
+        android:layout_gravity="center"
+            android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+            android:background="@drawable/campus_france"
             android:layout_margin="10dp"/>
            <TextView 
         android:layout_width="match_parent"
@@ -294,6 +327,20 @@
             android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
             android:background="@drawable/pearson"
+            android:layout_margin="10dp"/>
+        <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cubing Partner"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:gravity="center"
+        />
+        <ImageView 
+        android:layout_gravity="center"
+            android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+            android:background="@drawable/tntlogo"
             android:layout_margin="10dp"/>
         <TextView 
         android:layout_width="match_parent"
@@ -435,7 +482,21 @@
             android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
             android:background="@drawable/ta"
-            android:layout_margin="10dp"/> 
+            android:layout_margin="10dp"/>
+         <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Waste Management Partner"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:gravity="center"
+        />	
+        <ImageView 
+        android:layout_gravity="center"
+            android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+            android:background="@drawable/capture"
+            android:layout_margin="10dp"/>  
             <TextView 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -473,7 +534,35 @@
             android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
             android:background="@drawable/markmyfest_converted"
-            android:layout_margin="10dp"/> 
+            android:layout_margin="10dp"/>
+              <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Engagement Partner"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:gravity="center"
+        />	
+        <ImageView 
+        android:layout_gravity="center"
+            android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+            android:background="@drawable/treashare"
+            android:layout_margin="10dp"/>
+        <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Web Hosting Partner"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:gravity="center"
+        />	
+        <ImageView 
+        android:layout_gravity="center"
+            android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+            android:background="@drawable/znet"
+            android:layout_margin="10dp"/>   
               
            </LinearLayout>   
 </ScrollView>
